@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Joke Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>😂 Random Joke Generator</h1>
+            <p class="subtitle">Get a laugh with jokes from multiple sources</p>
+        </header>
+
+        <div class="controls">
+            <div class="category-selector">
+                <label for="category">Select Category:</label>
+                <select id="category">
+                    <option value="any">Any Category</option>
+                    <option value="general">General</option>
+                    <option value="programming">Programming</option>
+                    <option value="knock-knock">Knock Knock</option>
+                    <option value="dad">Dad Jokes</option>
+                    <option value="animal">Animal</option>
+                </select>
+            </div>
+            <button id="getJokeBtn" class="btn btn-primary">Get a Joke</button>
+            <button id="darkModeBtn" class="btn btn-secondary">🌙 Dark Mode</button>
+        </div>
+
+        <div class="joke-container">
+            <div id="jokeDisplay" class="joke-display">
+                <p class="placeholder">Click "Get a Joke" to start laughing! 😄</p>
+            </div>
+            <div class="joke-actions">
+                <button id="shareBtn" class="btn btn-small" title="Share joke">📤 Share</button>
+                <button id="copyBtn" class="btn btn-small" title="Copy to clipboard">📋 Copy</button>
+                <button id="saveBtn" class="btn btn-small" title="Save joke">💾 Save</button>
+            </div>
+        </div>
+
+        <div class="api-selector">
+            <label for="apiSource">API Source:</label>
+            <select id="apiSource">
+                <option value="random">Random API</option>
+                <option value="jokeapi">JokeAPI (jokes.one)</option>
+                <option value="icanhazdad">icanhazdadjokes</option>
+            </select>
+        </div>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading joke...</p>
+        </div>
+
+        <div id="notification" class="notification hidden"></div>
+
+        <div class="saved-jokes-section">
+            <h2>Saved Jokes (Local Storage)</h2>
+            <div id="savedJokesList" class="saved-jokes-list">
+                <p class="placeholder">No saved jokes yet. Save some to see them here!</p>
+            </div>
+            <button id="clearSavedBtn" class="btn btn-danger hidden">Clear All Saved Jokes</button>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
